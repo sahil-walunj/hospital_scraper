@@ -17,7 +17,7 @@ app.get('/', async (req, res) => {
 
         // Step 2: Extract hospital profile links
         const hospitalLinks = await page.evaluate(() => {
-            const elements = document.querySelectorAll('div.strip_box h3 a');
+            const elements = document.querySelectorAll('strip_box_wo_circle_desc');
             return Array.from(elements).map(el => el.href);
         });
 
